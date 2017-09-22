@@ -57,7 +57,7 @@ def getPassword(passwd):
 # so we'll define our variables
 awsenv = 'testing'
 tagname = 'tag:AppGroup'
-tagvalue = ['logistics-returns-cpc-observer']
+tagvalue = ['my-appgroup']
 ec2_filter =  {'name': tagname, 'values':tagvalue}
 instance_data = getEC2Instance(awsenv, ec2_filter)
 key_path = '/Users/timpringle/Documents/pems/' + awsenv + '.pem'
@@ -76,7 +76,7 @@ tagname = 'tag:Name'
 tagvalue = ['shared-windows-bastion-host*']
 ec2_filter =  {'name': tagname, 'values':tagvalue}
 instance_data = getEC2Instance(awsenv, ec2_filter)
-key_path = '/Users/timpringle/Documents/pems/' + awsenv + '.pem'
+key_path = '/Users/myname/Documents/pems/' + awsenv + '.pem'
 
 ec2client = boto3.client('ec2')
 passwd = ec2client.get_password_data(InstanceId=instance_data['instanceid'])
